@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API</title>
+    <style>
+        .main{
+            display: grid;
+            grid-column: 3;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    </style>
+  </head>
+  <body>
+    <main class="main">
+      <div>
+        <button onclick="usersData()">Get user name</button>
+        <div>
+          <ul id="ul"></ul>
+        </div>
+      </div>
+      <div>
+        <button onclick="loadPostData()">Create Post</button>
+        <div id="post-div">
+
+        </div>
+      </div>
+      <div>
+        <button onclick="loadCommentData()">Create Comment</button>
+        <div id="comment-div">
+
+        </div>
+      </div>
+    </main>
+    <!-- JS file -->
+    <script src="js/fecth.js"></script>
+  </body>
+</html>
