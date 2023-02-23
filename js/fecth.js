@@ -65,3 +65,21 @@ function createPhoto(photos){
         parentDiv.appendChild(div);
     }
 }
+// Create Todo's
+function loadToDosData(){
+    fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(res => res.json())
+    .then(data => createTodo(data))
+}
+function createTodo(toDos){
+    const parentDiv = document.getElementById('todos-div');
+    for(const todo of toDos){
+        const div = document.createElement('div');
+        div.innerHTML = `
+        <h3>Id: ${todo.id}</h3>
+        <h5>Title: ${todo.title}</h5>
+        <p>${todo.completed === true ? 'Task completed. Because its value true' : 'Task not completed. Because its value false'}</p>
+        `;
+        parentDiv.appendChild(div);
+    }
+}
