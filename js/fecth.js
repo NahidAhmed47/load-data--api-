@@ -47,3 +47,21 @@ function createComment(comments){
         parentDiv.appendChild(div);
     }
 }
+// Load photos data 
+function loadPhotosData(){
+    fetch('https://jsonplaceholder.typicode.com/photos')
+    .then(res => res.json())
+    .then(data => createPhoto(data))
+}
+function createPhoto(photos){
+    const parentDiv = document.getElementById('photos-div');
+    for(const photo of photos){
+        const div = document.createElement('div');
+        div.innerHTML = `
+        <h3>Album Id: ${photo.id}</h3>
+        <h5>Title: ${photo.title}</h5>
+        <img src="${photo.thumbnailUrl}"></img>
+        `;
+        parentDiv.appendChild(div);
+    }
+}
